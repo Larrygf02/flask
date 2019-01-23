@@ -1,0 +1,8 @@
+{% extends 'plantilla.html' %}
+{% block content %}
+    <ul>
+        {% for name in list %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
