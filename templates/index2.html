@@ -1,5 +1,13 @@
 {% extends 'base/base.html' %}
 {% block title %} {{ title }} {% endblock %}
 {% block content %}
-    <h2>Hola mundo </h2>
+    {% from "_macro.html" import render_field %}
+    <div class="container">
+        <form action="" class="py-4" id="contacForm" method="POST">
+            {{ render_field(form.username, class="form-control") }}
+            {{ render_field(form.email, class="form-control") }}
+            {{ render_field(form.comment, class="form-control") }}
+            <button class="btn btn-info">Enviar</button>
+        </form>
+    </div>
 {% endblock %}
