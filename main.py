@@ -10,9 +10,11 @@ app = Flask(__name__)
 def index():
     comment_form = forms.CommentForm(request.form)
     if request.method == 'POST' and comment_form.validate():
-        print comment_form.username.data
-        print comment_form.email.data
-        print comment_form.comment.data
+        print(comment_form.username.data)
+        print(comment_form.email.data)
+        print(comment_form.comment.data)
+    else:
+        print('Error en el formulario')
         
     title = 'Curso de flask'
     return render_template('index2.html', title=title, form=  comment_form)
